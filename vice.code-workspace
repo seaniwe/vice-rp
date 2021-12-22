@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "client_packages"
+		},
+		{
+			"path": "packages"
+		},
+		{
+			"path": "vuepr"
+		}
+	],
+	"settings": {}
+}

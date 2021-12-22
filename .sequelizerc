@@ -1,0 +1,10 @@
+require("babel-register");
+const path = require('path')
+const ormPath = 'packages/vicerp/db/'
+
+module.exports = {
+    'config': path.resolve(ormPath, 'config'),
+    'models-path': path.resolve(ormPath, 'models'),
+    'seeders-path': path.resolve(ormPath, 'seeders'),
+    'migration-path': path.resolve(ormPath, 'migration'),
+}
