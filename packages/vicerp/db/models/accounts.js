@@ -1,6 +1,5 @@
 const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = new Sequelize('sqlite::memory:');
-global.Op = Sequelize.Op;
+const sequelize = new Sequelize('mysql::memory:');
 
 module.exports = (sequelize, DataTypes) => {
   const model = sequelize.define('Account', {
@@ -18,38 +17,38 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     email: {
-      type: DataTypes.STRING(50),
+      type: DataTypes.STRING(100),
       allowNull: false
     },
     socialClub: {
-      type: DataTypes.STRING(50),
-      allowNull: false
+      type: DataTypes.STRING(100),
+      // allowNull: false
     },
     serial: {
-      type: DataTypes.STRING(50),
-      allowNull: false
+      type: DataTypes.STRING(500),
+      // allowNull: false
     },
     regDate: {
-      type: DataTypes.DATE,
-      defaultValue: Sequelize.NOW,
-      allowNull: false
+      type: 'TIMESTAMP',
+      defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+      // allowNull: false
     },
     lastDate: {
-      type: DataTypes.DATE,
-      allowNull: false
+      type: 'TIMESTAMP',
+      defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+      // allowNull: false
     },
     regIp: {
       type: DataTypes.STRING(50),
-      defaultValue: Sequelize.NOW,
-      allowNull: false
+      // allowNull: false
     },
     lastIp: {
       type: DataTypes.STRING(50),
-      allowNull: false
+      // allowNull: false
     },
   },
     {
-      timestamps: false
+      timestamps: true
     })
   return model
 }

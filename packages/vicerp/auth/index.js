@@ -1,4 +1,4 @@
-const { Account }   = require('../db/models')
+const { Account } = require('../db/models')
 var hash = require('md5')
 global.Account = Account
 // function test(login) {
@@ -16,19 +16,19 @@ var authorization = {
     },
 
     register: async (player, login, password) => {
-        var account = await Account.findOne({where: {login}});
-        if(account) {
-            return console.log('Логин заннят')
+        console.log(player.serial)
+        var account = await Account.findOne({ where: { login: login } });
+        if (account) {
+            if (account.login == login) {
+                return console.log('Логин заннят')
+            }
         }
-
-        Account.create({
-            login,
-            password: 'test',
+        player.account = Account.create({
+            login: login,
+            password: hash(password),
             email: login,
             socialClub: player.socialClub,
             serial: player.serial,
-            regDate,
-            lastDate,
             regIp: player.ip,
             lastIp: player.ip,
         })

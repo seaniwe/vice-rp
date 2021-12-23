@@ -1,12 +1,12 @@
-/*
+
 var player = mp.players.local;
-// var cef = mp.browsers.new('package://cef/index.html');
-var cef = mp.browsers.new('http://localhost:8080');
+var cef = mp.browsers.new('package://cef/index.html');
+// var cef = mp.browsers.new('http://localhost:8080');
 mp.gui.cursor.visible = true
 
 
 // Системы
-require('./systems/auth/index')
+require('./systems/auth/index.js')
 
 
 
@@ -27,7 +27,7 @@ mp.events.add('render', () =>{
 
 mp.events.add('browserDomReady', (cef) => {
     if(initDone == false) {
-        mp.events.callRemote('player.joined');
+     //   mp.events.callRemote('player.joined');
     }
     browserLoaded = true
 })
@@ -38,4 +38,3 @@ setInterval(() => {
     mp.game.invoke('0xF4F2C0D4EE209E20');
 }, 25000);
 
-*/

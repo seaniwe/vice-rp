@@ -7,7 +7,7 @@ mp.events.addCommand({
 
     'reg': (player, _, login, password) => {
         if(!login || !password) return
-        mp.events.call('server:register.start', login, password)
+        mp.events.call('server:register.start', player, login, password)
     }
 })
 
