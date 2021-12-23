@@ -1,22 +1,22 @@
 <template>
   <div id="app">
+    <notify ref="notify" />
     <auth ref="auth" />
     <chat ref="chat" />
-    <notify ref="notify" />
   </div>
 </template>
 
 <script>
+import notify from "./systems/notify/notify.vue";
 import auth from "./systems/auth/auth.vue";
 import chat from "./systems/chat/chat.vue";
-import notify from "./systems/notify/notify.vue";
 
 export default {
   name: "App",
   components: {
+    notify,
     auth,
     chat,
-    notify,
   },
 };
 </script>

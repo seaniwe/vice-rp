@@ -1,4 +1,4 @@
-const { Account } = require('../db/models')
+const { Account } = require('../../db/models')
 var hash = require('md5')
 global.Account = Account
 // function test(login) {
@@ -21,10 +21,11 @@ var authorization = {
             }
         })
 
-        if(account.login != login) return mp.notify.error(player, 'Не верный логин', 'Авторизация')
-        if(account.password != hash(password)) return mp.notify.error(player, 'Не верный пароль', 'Авторизация')
+        if (account.login != login) return mp.notify.error(player, 'Не верный логин', 'Авторизация')
+        if (account.password != hash(password)) return mp.notify.error(player, 'Не верный пароль', 'Авторизация')
 
         mp.notify.success(player, 'Вы успешно вошли в аккаунт', 'Авторизация')
+        player.call('notifications.push.success', ['Вы успешно вошли в аккаунт', 'Авторизация'])
         player.call('client:auth.register-result')
         player.position = new mp.Vector3(-425.517, 1123.620, 325.8544)
         player.online = true
@@ -40,7 +41,7 @@ var authorization = {
             if (account.socialClub == player.socialClub) {
                 mp.notify.warning(player, 'Данный socialClub имеет аккаунт', 'Регистрация')
                 mp.notify.info(player, 'Если это ваш аккаунт - востановите пароль', 'Регистрация')
-                return 
+                return
             }
             if (account.email == email) {
                 return mp.notify.warning(player, 'Указанная почта уже зарегестрирована', 'Регистрация')
