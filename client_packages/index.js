@@ -27,7 +27,7 @@ mp.events.add('render', () =>{
 
 mp.events.add('browserDomReady', (cef) => {
     if(initDone == false) {
-     //   mp.events.callRemote('player.joined');
+       mp.events.callRemote('player.joined');
     }
     browserLoaded = true
 })
