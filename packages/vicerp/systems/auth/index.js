@@ -21,9 +21,10 @@ var authorization = {
             }
         })
 
-        if(account.login != login) return console.log('Неверный логин')
-        if(account.password != hash(password)) return console.log('Неверный password')
+        if(account.login != login) return mp.notify.error(player, 'Не верный логин', 'Авторизация')
+        if(account.password != hash(password)) return mp.notify.error(player, 'Не верный пароль', 'Авторизация')
 
+        mp.notify.success(player, 'Вы успешно вошли в аккаунт', 'Авторизация')
         player.call('client:auth.register-result')
         player.position = new mp.Vector3(-425.517, 1123.620, 325.8544)
         player.online = true
@@ -34,13 +35,15 @@ var authorization = {
         var account = await Account.findOne({ where: { login: login, email: email, socialClub: player.socialClub } });
         if (account) {
             if (account.login == login) {
-                return console.log('Логин заннят')
+                return mp.notify.error(player, 'Логин занят', 'Регистрация')
             }
             if (account.socialClub == player.socialClub) {
-                return console.log('Ваш сошиал уже зареган')
+                mp.notify.warning(player, 'Данный socialClub имеет аккаунт', 'Регистрация')
+                mp.notify.info(player, 'Если это ваш аккаунт - востановите пароль', 'Регистрация')
+                return 
             }
             if (account.email == email) {
-                return console.log('Почта зарезестрирована на другой аккаунт')
+                return mp.notify.warning(player, 'Указанная почта уже зарегестрирована', 'Регистрация')
             }
         }
         player.account = Account.create({
@@ -53,6 +56,7 @@ var authorization = {
             lastIp: player.ip,
         })
 
+        mp.notify.success(player, 'Вы успешно создали аккаунт', 'Регистрация')
         player.call('client:auth.register-result')
         player.position = new mp.Vector3(-425.517, 1123.620, 325.8544)
         player.online = true

@@ -6,8 +6,7 @@
         v-for="notif in messages"
         :key="notif.hash"
       >
-        <!-- <img src="img/info.svg" /> -->
-        <img :src="'img/' + notif.img + '.svg'" />
+        <img :src="require('../notify/img/' + notif.img + '.svg')" />
         <div v-cloak class="message">
           <div class="header" v-if="notif.header">{{ notif.header }}</div>
           {{ notif.text }}
@@ -83,9 +82,6 @@ export default {
     removeMoney(text, header) {
       this.push(`remove money`, text, header);
     },
-  },
-  mounted() {
-    this.info("Логин занят", "Регистрация");
   },
 };
 </script>

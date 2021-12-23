@@ -7,7 +7,7 @@ mp.gui.cursor.visible = true
 
 // Системы
 require('./systems/auth/index.js')
-
+require('./systems/notify/index.js')
 
 
 
