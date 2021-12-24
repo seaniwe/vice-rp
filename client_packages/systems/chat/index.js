@@ -12,12 +12,10 @@ mp.chat = {
 
     open: function () {
         if (mp.game.ui.isPauseMenuActive()) return
-        if (variables.openSystem.authAndSelector == true || variables.openSystem.charCreator == true || variables.openSystem.phone == true || variables.openSystem.tablet == true || variables.openSystem.carshop == true) return;
         mp.events.add('render', () => {
             mp.game.controls.disableControlAction(1, 200, true); // ESC
             mp.game.controls.disableControlAction(0, 200, true); // ESC
         })
-        variables.openSystem.chat = true
         cef.execute(`cef.chat.openChat()`)
         mp.gui.cursor.visible = true;
     },
@@ -28,7 +26,6 @@ mp.chat = {
             mp.game.controls.enableControlAction(0, 200, true);
         })
         cef.execute(`cef.chat.closeChat()`)
-        variables.openSystem.chat = false
         mp.gui.cursor.visible = false;
     },
 

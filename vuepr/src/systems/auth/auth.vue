@@ -91,7 +91,7 @@
 export default {
   data() {
     return {
-      open: false,
+      open: true,
       showprompt: false,
       prompt: "",
       auth: {

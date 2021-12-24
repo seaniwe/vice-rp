@@ -148,7 +148,7 @@ export default({
 		max-width: 75vh;
 		color: #cacaca;
 		line-height: 2.5vh;
-		font-size: 1.55vh;
+		font-size: 1.7vh;
 		overflow-y: scroll;
 		overflow-x: hidden;
 		word-wrap: normal;
@@ -156,7 +156,6 @@ export default({
 		text-shadow: -0 -1px 0 #000000, 0 -1px 0 #000000, -0 1px 0 #000000, 0 1px 0 #000000, -1px -0 0 #000000, 1px -0 0 #000000, -1px 0 0 #000000, 1px 0 0 #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
 	}
 	.inputMsg {
-		font-family: "lite";
 		position: absolute;
 		margin-left: 1.5vh;
 		top: 33.5vh;
@@ -166,7 +165,7 @@ export default({
 		border: none;
 		color: #dedede;
 		display: inline-block;
-		padding: 1vh 1.5vh;
+		padding: 1.3vh 1.5vh;
 		background: rgba(0, 0, 0, 0.8);
 		height: 1.8vh;
 		border-radius: 2px;
