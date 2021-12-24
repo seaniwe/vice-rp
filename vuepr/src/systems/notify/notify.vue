@@ -140,33 +140,33 @@ export default {
 #notifications .cash.remove,
 #notifications .money.remove,
 #notifications .error {
-  background: #2b2b2b;
-  border-left: 5px solid #c22;
+  background: rgba(43, 43, 43, .6);
+  border-left: 3px solid #c22;
 }
 
 #notifications .info {
-  background: #2b2b2b;
-  border-left: 5px solid #23c;
+  background: rgba(43, 43, 43, .6);
+  border-left: 3px solid #23c;
 }
 
 #notifications .success {
-  background: #2b2b2b;
-  border-left: 5px solid #3c2;
+  background: rgba(43, 43, 43, .6);
+  border-left: 3px solid #3c2;
 }
 
 #notifications .warning {
-  background: #2b2b2b;
-  border-left: 5px solid #c82;
+  background: rgba(43, 43, 43, .6);
+  border-left: 3px solid #c82;
 }
 
 #notifications .money.add {
-  background: #2b2b2b;
-  border-left: 5px solid #c82;
+  background: rgba(43, 43, 43, .6);
+  border-left: 3px solid #c82;
 }
 
 #notifications .cash.add {
-  background: #2b2b2b;
-  border-left: 5px solid #c82;
+  background: rgba(43, 43, 43, .6);
+  border-left: 3px solid #c82;
 }
 
 .notif-enter-active {

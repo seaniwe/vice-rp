@@ -1,14 +1,7 @@
 const { Account } = require('../../db/models')
 var hash = require('md5')
 global.Account = Account
-// function test(login) {
-//     Account.create({
-//         login,
-//         password: 'seaniwe'
-//     })
-// }
 
-// test('seaniwe')
 
 var authorization = {
     auth: async (player, login, password) => {
@@ -25,8 +18,7 @@ var authorization = {
         if (account.password != hash(password)) return mp.notify.error(player, 'Не верный пароль', 'Авторизация')
 
         mp.notify.success(player, 'Вы успешно вошли в аккаунт', 'Авторизация')
-        player.call('notifications.push.success', ['Вы успешно вошли в аккаунт', 'Авторизация'])
-        player.call('client:auth.register-result')
+        player.call('client:auth.login-result')
         player.position = new mp.Vector3(-425.517, 1123.620, 325.8544)
         player.online = true
     },

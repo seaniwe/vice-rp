@@ -1,36 +1,35 @@
-"use strict";
 mp.notify = {
     success(text, header) {
         if (typeof text == 'object') text = JSON.stringify(text);
-        cef.execute(`notifications.success(\`${text}\`, \`${header}\`)`);
+        cef.execute(`cef.notify.success(\`${text}\`, \`${header}\`)`);
     },
     warning(text, header) {
         if (typeof text == 'object') text = JSON.stringify(text);
-        cef.execute(`notifications.warning(\`${text}\`, \`${header}\`)`);
+        cef.execute(`cef.notify.warning(\`${text}\`, \`${header}\`)`);
     },
     error(text, header) {
         if (typeof text == 'object') text = JSON.stringify(text);
-        cef.execute(`notifications.error(\`${text}\`, \`${header}\`)`);
+        cef.execute(`cef.notify.error(\`${text}\`, \`${header}\`)`);
     },
     info(text, header) {
         if (typeof text == 'object') text = JSON.stringify(text);
-        cef.execute(`notifications.info(\`${text}\`, \`${header}\`)`);
+        cef.execute(`cef.notify.info(\`${text}\`, \`${header}\`)`);
     },
     addCash(text, header) {
         if (typeof text == 'object') text = JSON.stringify(text);
-        cef.execute(`notifications.addCash(\`${text}\`, \`${header}\`)`);
+        cef.execute(`cef.notify.addCash(\`${text}\`, \`${header}\`)`);
     },
     removeCash(text, header) {
         if (typeof text == 'object') text = JSON.stringify(text);
-        cef.execute(`notifications.removeCash(\`${text}\`, \`${header}\`)`);
+        cef.execute(`cef.notify.removeCash(\`${text}\`, \`${header}\`)`);
     },
     addMoney(text, header) {
         if (typeof text == 'object') text = JSON.stringify(text);
-        cef.execute(`notifications.addMoney(\`${text}\`, \`${header}\`)`);
+        cef.execute(`cef.notify.addMoney(\`${text}\`, \`${header}\`)`);
     },
     removeMoney(text, header) {
         if (typeof text == 'object') text = JSON.stringify(text);
-        cef.execute(`notifications.removeMoney(\`${text}\`, \`${header}\`)`);
+        cef.execute(`cef.notify.removeMoney(\`${text}\`, \`${header}\`)`);
     },
 };
 

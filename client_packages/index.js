@@ -6,10 +6,17 @@ mp.gui.cursor.visible = true
 
 
 // Системы
-require('./systems/auth/index.js')
-require('./systems/notify/index.js')
+require('./systems/auth/index')
+require('./systems/notify/index')
+require('./systems/charSelector/index')
+
+// Scripts
+require('./scripts/fly')
 
 
+mp.keys.bind(0x71, true, function() {
+    mp.gui.cursor.visible != mp.gui.cursor.visible
+});
 
 let browserLoaded = false
 let initDone = false;
