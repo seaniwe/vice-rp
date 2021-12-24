@@ -3,6 +3,7 @@
     <notify ref="notify" />
     <auth ref="auth" />
     <chat ref="chat" />
+    <charCreator ref="creator" />
   </div>
 </template>
 
@@ -10,6 +11,7 @@
 import notify from "./systems/notify/notify.vue";
 import auth from "./systems/auth/auth.vue";
 import chat from "./systems/chat/chat.vue";
+import charCreator from "./systems/charCreator/charCreator.vue";
 
 export default {
   name: "App",
@@ -17,6 +19,7 @@ export default {
     notify,
     auth,
     chat,
+    charCreator,
   },
 };
 </script>

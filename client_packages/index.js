@@ -9,6 +9,7 @@ mp.gui.cursor.visible = true
 require('./systems/auth/index')
 require('./systems/notify/index')
 require('./systems/charSelector/index')
+require('./systems/chat/index')
 
 // Scripts
 require('./scripts/fly')

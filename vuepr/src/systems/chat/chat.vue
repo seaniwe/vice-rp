@@ -13,12 +13,12 @@ export default({
     data() {
         return {
             open: false,
-            chatShow: false,
+            chatShow: true,
             message: "",
             messages: [],
             historyMessages: [],
             historyCount: 0,
-            activeCommand: false, 
+            activeCommand:false, 
         }
     },
     mounted() {
@@ -139,7 +139,7 @@ export default({
 <style lang='scss' scoped>
 #chat {
 	.messages {
-		// font-family: "mainFont";
+		font-family: "mainFont";
 		position: absolute;
 		top: 2vh;
 		margin-left: 1vh;
@@ -148,7 +148,7 @@ export default({
 		max-width: 75vh;
 		color: #cacaca;
 		line-height: 2.5vh;
-		font-size: 1.8vh;
+		font-size: 1.55vh;
 		overflow-y: scroll;
 		overflow-x: hidden;
 		word-wrap: normal;
@@ -156,7 +156,7 @@ export default({
 		text-shadow: -0 -1px 0 #000000, 0 -1px 0 #000000, -0 1px 0 #000000, 0 1px 0 #000000, -1px -0 0 #000000, 1px -0 0 #000000, -1px 0 0 #000000, 1px 0 0 #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
 	}
 	.inputMsg {
-		// font-family: "lite";
+		font-family: "lite";
 		position: absolute;
 		margin-left: 1.5vh;
 		top: 33.5vh;

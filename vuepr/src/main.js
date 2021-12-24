@@ -27,6 +27,7 @@ var isEmpyZoneDOM = (targetId) => {
 }
 
 
+
 // var inGame = true;
 // var isMouseDown = false;
 // window.onmousedown = function (event) {
