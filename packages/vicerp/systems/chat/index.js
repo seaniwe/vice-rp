@@ -12,7 +12,7 @@ mp.chat = {
 
 	playerSay(player, message) {
 		mp.players.forEachInRange(player.position, 10, (target) => {
-				target.call('getMessage.client', [`!{#e6e6e6}[${mp.time.data.hour}:${mp.time.data.minute}:${mp.time.data.second}] ${player.name}[${player.id}] говорит: ${message}`]);
+				target.call('getMessage.client', [`!{#e6e6e6} ${player.name}[${player.id}] говорит: ${message}`]);
 			}
 		);
 	}

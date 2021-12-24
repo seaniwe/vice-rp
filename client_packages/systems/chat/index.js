@@ -43,12 +43,10 @@ mp.keys.bind(0x1B, true, function () {
 
 mp.events.add('chatCloseClient', () => {
     mp.gui.cursor.visible = false;
-    variables.openSystem.chat = false
 })
 
 mp.events.add('getMessage.client', (message) => {
     cef.execute(`cef.chat.acceptMessage('${message}');`);
-    variables.openSystem.chat = false
 })
 
 // Отправка сообщения в радиусе игрока
