@@ -1,7 +1,7 @@
 <template>
   <div id="creator" v-show="open">
     <audio ref='audio' :src="srcAudio" preload="auto"></audio>
-    <div class="first-info">
+    <div class="first-info" v-if="form == 0">
       <div class="inputField">
         <input
           type="text"
@@ -28,6 +28,13 @@
         <div>Продолжить</div>
       </div>
     </div>
+
+    <div class="custom" v-show="form == 1">
+      <div class="nav-menu">
+        <div class="nav" v-for="item in nav" :key="item.id">{{ item.name }}</div>
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -35,13 +42,14 @@
 export default {
     data() {
         return {
-            open: false,
+            open: true,
+            form: 1,
             charter: {
                 name: '',
                 surname: '',
                 age: '',
             },
-            srcAudio: 'https://www.youtube.com/watch?v=XBayAWPvqPc&list=RDMMXBayAWPvqPc&index=1&ab_channel=FaceMusic'
+            nav: [{id: 10, name: 'Родители'}, {id: 11, name: 'Лицо'}, {id: 12, name: 'Волосы'}]
         }
     },
 
@@ -77,7 +85,8 @@ export default {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: radial-gradient(126.21% 185.16% at -62.71% -76.18%, #FF1368 0%, rgba(196, 196, 196, 0) 100%);
+  // background: radial-gradient(126.21% 185.16% at -62.71% -76.18%, #FF1368 0%, rgba(196, 196, 196, 0) 100%);
+  background: gray;
 
   .first-info {
     position: absolute;
@@ -118,6 +127,29 @@ export default {
         &:hover {
           background: rgba(218, 29, 98, 0.9);
         }
+      }
+    }
+  }
+
+  .custom {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    .nav-menu {
+      position: absolute;
+      left: 50%;
+      margin-top: 2vh;
+      transform: translate(-50%, 0);
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      width: 50vh;
+
+      .nav {
+        font-size: 2.5vh;
+        font-weight: 700;
+        color: rgba(242, 238, 231, 0.8);
       }
     }
   }
