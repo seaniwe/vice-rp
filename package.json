@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "require-dir-all": "^0.4.15"
+  }
+}
