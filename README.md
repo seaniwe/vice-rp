@@ -1,2 +1,3 @@
 # vice-rp
-  - 22.12.2021 | Started project development
+  - 22.12.2021
+  - Росія Агресор. Слава Україні!
